@@ -7,6 +7,7 @@ import App from "./App.jsx";
 import Page1 from "./components/Page1.jsx";
 import Page2 from "./components/Page2.jsx";
 import AuthContainer from "./components/AuthContainer.jsx";
+import ProtectedRoutes from "./components/utils/ProtectedRoute.jsx";
 
 const router = createBrowserRouter([
 	{
@@ -19,11 +20,11 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/page1",
-				element: <Page1 />,
+				element: (<ProtectedRoutes><Page1 /></ProtectedRoutes>),
 			},
 			{
 				path: "/page2",
-				element: <Page2 />,
+				element: (<ProtectedRoutes><Page2 /></ProtectedRoutes>),
 			},
 		],
 	},
